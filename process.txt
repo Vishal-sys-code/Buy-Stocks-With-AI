@@ -1,0 +1,87 @@
+There is no open API to buy stocks directly.
+We have to use GPT-3 [Skynet]
+
+1.) we need a backend service so we need firebase app for cloud functions. 
+I am not using the cloudfare workers it will not respond correctly and timely that how our bot is responding.
+
+2.) node.js -> GPT-3
+
+GPT = Generative Pre-Trained Transformer 3 => We will see some tweets according to high algo-traders for having a desicion for buying  a stock.
+
+For buying a stock we need a broker so we using a ALPACA API which is basically a robinhood for developers.
+
+
+-------------------------------
+
+1.) firebase init functions => setup with instructions
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\bisha\OneDrive\Desktop\Buy Stocks with Javascript
+
+? Are you ready to proceed? Yes
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project. 
+You can create multiple project aliases by running firebase use --add, 
+but for now we'll just set up a default project.
+
+? Please select an option: Create a new project
+i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, 
+and return to this command when you've created the project.
+? Please specify a unique project id (warning: cannot be modified afterward) [6-30 characters]:
+ tmleyncodes-trading-bot
+? What would you like to call your project? (defaults to your project ID) buy-stocks-in-js
+✔ Creating Google Cloud Platform project
+✔ Adding Firebase resources to Google Cloud Platform project
+
+=== Your Firebase project is ready! ===
+
+Project information:
+   - Project ID: tmleyncodes-trading-bot
+   - Project Name: buy-stocks-in-js
+
+Firebase console is available at
+https://console.firebase.google.com/project/tmleyncodes-trading-bot/overview
+i  Using project tmleyncodes-trading-bot (buy-stocks-in-js)
+
+=== Functions Setup
+
+A functions directory will be created in your project with sample code
+pre-configured. Functions can be deployed with firebase deploy.
+
+? What language would you like to use to write Cloud Functions? JavaScript
+? Do you want to use ESLint to catch probable bugs and enforce style? Yes
++  Wrote functions/package.json
++  Wrote functions/.eslintrc.js
++  Wrote functions/index.js
++  Wrote functions/.gitignore
+? Do you want to install dependencies with npm now? Yes
+
+added 331 packages, and audited 332 packages in 1m
+
+29 packages are looking for funding
+  run `npm fund` for details
+
+3 vulnerabilities (1 moderate, 2 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+i  Writing gitignore file to .gitignore...
+
++  Firebase initialization complete!
+
+2.) cd functions
+3.) npm i openai puppeteer @alpacahq/alpaca-trade-api
